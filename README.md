@@ -2,7 +2,9 @@
 A VS Code extension for navigating between Git commits easily.
 
 ## Usage
-commands:
-![gitnav commands](images/commands.png)
-panel:
-![gitnav panel](images/panel.png)
+
+### Commands
+![GitNav Commands](images/commands.png)
+
+### Panel
+![GitNav Panel](images/panel.png)
