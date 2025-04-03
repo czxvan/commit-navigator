@@ -63,7 +63,8 @@
         "lint": "eslint .",
         "pretest": "pnpm run lint",
         "test": "vscode-test",
-        "package": "pnpm vsce package --no-dependencies"
+        "package": "pnpm vsce package --no-dependencies",
+        "publish": "pnpm vsce publish --no-dependencies"
     },
     "devDependencies": {
         "@types/mocha": "^10.0.10",
