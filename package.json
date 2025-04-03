@@ -1,12 +1,13 @@
 {
-    "name": "commit-navigator",
-    "displayName": "Git提交导航器",
+    "name": "gitnav",
+    "displayName": "GitNav",
     "description": "A VS Code extension for navigating Git commits easily.",
-    "version": "1.0.0",
+    "icon": "./images/gitnav.png",
+    "version": "0.1.0",
     "publisher": "czxvan",
     "repository": {
       "type": "git",
-      "url": "https://github.com/czxvan/commit-navigator.git"
+      "url": "https://github.com/czxvan/gitnav.git"
     },
     "engines": {
         "vscode": "^1.85.0"
@@ -14,19 +15,44 @@
     "categories": [
         "Other"
     ],
-    "main": "./extension.js",
+    "main": "./src/extension.js",
     "contributes": {
         "commands": [
             {
-                "command": "commitNavigator.navigate",
-                "title": "切换Git提交",
-                "category": "Git导航"
+                "command": "gitnav.showPanel",
+                "title": "Show Panel",
+                "category": "GitNav"
+            },
+            {
+                "command": "gitnav.prev",
+                "title": "Previous Commit",
+                "category": "GitNav"
+            },
+            {
+                "command": "gitnav.next",
+                "title": "Next Commit",
+                "category": "GitNav"
+            },
+            {
+                "command": "gitnav.init",
+                "title": "Init Commit",
+                "category": "GitNav"
+            },
+            {
+                "command": "gitnav.head",
+                "title": "Head Commit",
+                "category": "GitNav"
+            },
+            {
+                "command": "gitnav.custom",
+                "title": "Custom Commit",
+                "category": "GitNav"
             }
         ],
         "menus": {
             "editor/title": [
                 {
-                    "command": "commitNavigator.navigate",
+                    "command": "gitnav.showPanel",
                     "group": "navigation",
                     "when": "resourceScheme == file"
                 }

@@ -6,11 +6,10 @@ class CommitNavigator:
     def __init__(self):
         self.repo = Repo(search_parent_directories=True)
         self.commits = list(self.repo.iter_commits(all=True, reverse=True))  # 按时间顺序排列
-        self.current_commit = self.repo.head.commit
 
     def find_current_index(self):
         for idx, commit in enumerate(self.commits):
-            if commit.hexsha == self.current_commit.hexsha:
+            if commit.hexsha == self.repo.head.commit.hexsha:
                 return idx
         raise ValueError("Current commit not found in history")
 
@@ -61,7 +60,6 @@ class CommitNavigator:
 
     def _show_status(self, commit):
         current_index = self.find_current_index()
-        print(f"\n当前位于分离头指针状态 (detached HEAD)")
         print(f"提交序号: {current_index}")
         print(f"提交哈希: {commit.hexsha}")
         print(f"提交信息: {commit.message.splitlines()[0]}")

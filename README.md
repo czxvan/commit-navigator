@@ -1,7 +1,8 @@
-# Commit-Navigator
-A VS Code extension for navigating Git commits easily.
+# GitNav: Git-Commit-Navigator for Visual Studio Code
+A VS Code extension for navigating between Git commits easily.
 
-## 安装vsce
-```shell
-pnpm install -g vsce
-```
+## Usage
+commands:
+![gitnav commands](images/commands.png)
+panel:
+![gitnav panel](images/panel.png)
