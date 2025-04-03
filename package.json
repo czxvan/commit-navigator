@@ -1,0 +1,51 @@
+{
+    "name": "commit-navigator",
+    "displayName": "Git提交导航器",
+    "description": "A VS Code extension for navigating Git commits easily.",
+    "version": "1.0.0",
+    "publisher": "czxvan",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/czxvan/commit-navigator.git"
+    },
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "commitNavigator.navigate",
+                "title": "切换Git提交",
+                "category": "Git导航"
+            }
+        ],
+        "menus": {
+            "editor/title": [
+                {
+                    "command": "commitNavigator.navigate",
+                    "group": "navigation",
+                    "when": "resourceScheme == file"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "lint": "eslint .",
+        "pretest": "pnpm run lint",
+        "test": "vscode-test",
+        "package": "pnpm vsce package --no-dependencies"
+    },
+    "devDependencies": {
+        "@types/mocha": "^10.0.10",
+        "@types/node": "20.x",
+        "@types/vscode": "^1.85.0",
+        "@vscode/test-cli": "^0.0.10",
+        "@vscode/test-electron": "^2.4.1",
+        "@vscode/vsce": "^3.3.2",
+        "eslint": "^9.23.0"
+    }
+}
